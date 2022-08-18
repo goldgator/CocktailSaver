@@ -1,0 +1,99 @@
+body {
+    color: white;
+    background-color: dimgray;
+}
+
+.pageButton {
+    background-color: black;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-content: center;
+
+}
+
+.pageButton2 {
+    background-color: black;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    float: right;
+}
+
+.logout {
+    background-color: white;
+    color: black;
+    padding: 15px 25px;
+    text-decoration: none;
+    float: right;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    text-align:center;
+}
+
+.bodyHeader {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pageContent {
+    text-align: center;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    border-radius: 50%;
+    max-width: 15%;
+    height: 15%;
+    object-fit: contain;
+}
+
+.buttonCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tableCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.gameCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 10%;
+}
+
+tr {
+    border: 5px solid white;
+    color: black;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px 5px;
+    color: white;
+}
