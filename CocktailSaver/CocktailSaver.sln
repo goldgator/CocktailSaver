@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "CocktailSaver", "CocktailSaver.phpproj", "{F749B48C-2CBB-40FB-AE7A-8348D749B9A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F749B48C-2CBB-40FB-AE7A-8348D749B9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F749B48C-2CBB-40FB-AE7A-8348D749B9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F749B48C-2CBB-40FB-AE7A-8348D749B9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F749B48C-2CBB-40FB-AE7A-8348D749B9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2716944-EBA9-444E-9ECC-B81CDCD6F221}
+	EndGlobalSection
+EndGlobal
