@@ -33,11 +33,6 @@ echo "Copyright Bacon Boys - " . $CurrentYear;
 
     <link rel="stylesheet" type="text/css"  href="<?php echo $StyleString?>" />
 
-    <form method="post">
-        <input class="pageButton" type="submit" name="Style1" value="Style1"/>
-        <input class="pageButton" type="submit" name="Style2" value="Style2"/>
-        <input class="pageButton" type="submit" name="Style3" value="Style3"/>
-    </form>
 
 </body>
 </html>
