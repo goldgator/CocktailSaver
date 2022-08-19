@@ -45,7 +45,7 @@ class Cocktail
 
     function create_list_entry() {
 
-        $form = "<form method='post' action='../Backend/SaveCocktail.php'>" .
+        $form = "<form method='post' action='SaveCocktail.php'>" .
             $this->create_hidden_input("UserID", "UserID", $this->get_userKey()) .
             $this->create_hidden_input("Name", "Name", $this->get_name()) .
             $this->create_hidden_input("Ingredients", "Ingredients", $this->get_ingredients()) .

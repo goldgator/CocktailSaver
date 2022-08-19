@@ -54,7 +54,7 @@ function CreateAdminSession($UserName) {
 
 function Logout() {
     unset($_SESSION["UserName"]);
-    unset($_SESSION["IsAdmin"]);
+    unset($_SESSION["UserID"]);
     unset($_SESSION["StyleType"]);
 }
 
