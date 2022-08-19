@@ -104,9 +104,9 @@ function GetUsersJson($dbConn) {
 }
 
 // Return number of records changed
-function MyUserUpdate($dbConn, $UId, $UUserName, $UPassword, $UIsAdmin) {
+function MyUserUpdate($dbConn, $UId, $UUserName, $UPassword) {
 
-    $query = "update VideoGame set Username = '" . $UUserName . "', Password = '" . $UPassword . "' IsAdmin = '" . $UIsAdmin . "' where ID=" . $GId;
+    $query = "update VideoGame set Username = '" . $UUserName . "', Password = '" . $UPassword . "' where ID=" . $UId;
 
     $result = mysqli_query($dbConn, $query);
     $rows = $dbConn->affected_rows;
@@ -157,6 +157,13 @@ function GetUserByUsernamePassword($dbConn, $UUsername, $UPassword)
 }
 
 #endregion
+
+function GetCocktailByUser($dbConn, $UID)
+{
+    $query = "SELECT * FROM Cocktails WHERE UserID = '" . $UID;
+
+    return @mysqli_query($dbConn, $query);
+}
 
 // ///////////////////////////////////////////////////
 // Privs? GRANT SELECT, INSERT, UPDATE, DELETE ON `mytestdb`.* TO 'root'@'localhost';
