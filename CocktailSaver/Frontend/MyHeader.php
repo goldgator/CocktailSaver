@@ -12,7 +12,7 @@ session_start();
 
 <div class="bodyHeader">
     <br />
-<h1>Bacon Bois Better Gamestop</h1>
+<h1>COCK</h1>
     <br />
  </div>
 
@@ -21,7 +21,7 @@ session_start();
     <br />
 <div class="buttonCenter">
     <a class="pageButton"  href="../index.php">Home</a>
-    <a class="pageButton" href="/Frontend/Store.php">Store</a>
+    <a class="pageButton" href="/Frontend/CocktailSearch.php">Search</a>
     <a class="pageButton"  href="/Frontend/Contact.php">Contact</a>
 </div>
         <?php
@@ -37,4 +37,3 @@ session_start();
 <br />
 <br />
     </body>
-

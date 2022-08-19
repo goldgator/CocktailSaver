@@ -42,6 +42,7 @@ h1 {
     color: white;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px 140px 30px 140px;
 }
 
 .pageContent {
@@ -96,4 +97,39 @@ td {
     border: 1px solid black;
     padding: 5px 5px;
     color: white;
+}
+
+.mainContent {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: solid white 2px;
+    padding: 25px;
+    width: 65px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.masterBody {
+    background-image: url(https://images.immediate.co.uk/production/volatile/sites/2/2021/04/Zombie-bbcc653.jpg?quality=90&webp=true&resize=975,649);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: fit;
+    text-align: center;
+    visibility: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 5%;
+    visibility: visible;
+    text-align: center
+}
+
+font {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Times New Roman", Georgia, Serif;
 }
