@@ -4,18 +4,14 @@ include_once "dbConnector.php";
 
 //Session keys
     //UserName -> User name of the user
-    //IsAdmin -> Has Admin privileges
+    //ID -> ID of the user
 
 function GetUserName() {
     return $_SESSION["UserName"];
 }
 
-function IsAdmin() {
-    if (array_key_exists("IsAdmin", $_SESSION)) {
-        return true;
-    } else {
-        return false;
-    }
+function GetUserID() {
+    return $_SESSION["ID"];
 }
 
 function TryLogin($UserName, $UserPassword) {
@@ -32,11 +28,8 @@ function TryLoginAlt($dbConn, $UserName, $UserPassword) {
     //return true or false depending on login success
     if ($user == null) return false;
 
-    if ($user["IsAdmin"] == true) {
-        CreateAdminSession($UserName);
-    } else {
-        CreateUserSession($UserName);
-    }
+    CreateUserSession($UserName, $user["ID"]);
+    
     return true;
 }
 
@@ -48,20 +41,14 @@ function CreateAndLogin($UserName, $UserPassword) {
     return TryLoginAlt($dbConn, $UserName, $UserPassword);
 }
 
-
-function CreateUserSession($UserName) {
+function CreateUserSession($UserName, $UserID) {
     $_SESSION["UserName"] = $UserName;
-}
-
-function CreateAdminSession($UserName) {
-    $_SESSION["UserName"] = $UserName;
-    $_SESSION["IsAdmin"] = true;
+    $_SESSION["UserID"] = $UserID;
 }
 
 function Logout() {
     unset($_SESSION["UserName"]);
-    unset($_SESSION["IsAdmin"]);
-    unset($_SESSION["StyleType"]);
+    unset($_SESSION["UserID"]);
 }
 
 ?>
