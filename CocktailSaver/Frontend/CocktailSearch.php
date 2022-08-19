@@ -36,7 +36,6 @@ require "../Backend/Cocktail.php";
 </div>
 
 
-
 <?php
 include_once "MyFooter.php";
 

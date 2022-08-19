@@ -12,7 +12,8 @@ session_start();
 
 <div class="bodyHeader">
     <br />
-<h1>COCK</h1>
+
+<h1><img class="headerImage" src="https://i.pinimg.com/originals/69/a1/61/69a161d0228db00c9a2560a46bf942eb.png" /></img> Bacon Bois Cocktail Bar </h1>
     <br />
  </div>
 
@@ -23,6 +24,7 @@ session_start();
     <a class="pageButton"  href="../index.php">Home</a>
     <a class="pageButton" href="/Frontend/CocktailSearch.php">Search</a>
     <a class="pageButton"  href="/Frontend/Contact.php">Contact</a>
+    <a class="pageButton"  href="/Frontend/UserPage.php">User Page</a>
 </div>
         <?php
         if (isset($_SESSION["UserName"])) {

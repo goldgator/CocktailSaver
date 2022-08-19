@@ -38,10 +38,10 @@ function GetCocktailsJson($dbConn) {
     return @mysqli_query($dbConn, $query);
 }
 
-function GetCocktailsByIDJson($dbConn, $GID) {
+function GetCocktailsByIDJson($dbConn, $CID) {
 
     $query = "SELECT *
-   FROM Cocktails WHERE ID = " . $GID;
+   FROM Cocktails WHERE ID = " . $CID;
 
     return @mysqli_query($dbConn, $query);
 }
@@ -160,7 +160,7 @@ function GetUserByUsernamePassword($dbConn, $UUsername, $UPassword)
 
 function GetCocktailByUser($dbConn, $UID)
 {
-    $query = "SELECT * FROM Cocktails WHERE UserID = '" . $UID;
+    $query = "SELECT * FROM Cocktails WHERE UserID = " . $UID;
 
     return @mysqli_query($dbConn, $query);
 }
