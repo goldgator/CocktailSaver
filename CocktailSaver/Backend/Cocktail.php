@@ -77,11 +77,7 @@ class Cocktail
     function create_delete_list_entry() {
 
         $form = "<form method='post' action='DeleteCocktail.php'>" .
-            $this->create_hidden_input("UserID", "UserID", $this->get_userKey()) .
-            $this->create_hidden_input("Name", "Name", $this->get_name()) .
-            $this->create_hidden_input("Ingredients", "Ingredients", $this->get_ingredients()) .
-            $this->create_hidden_input("Instructions", "Instructions", $this->get_instructions()) .
-            $this->create_hidden_input("ImageLink", "ImageLink", $this->get_imgLink()) .
+            $this->create_hidden_input("CocktailID", "CocktailID", $this->get_id()) .
             "<table class='cocktailEntryTable'>
             <tbody>
             <tr>
@@ -90,7 +86,7 @@ class Cocktail
             <td> Instructions </td>
             </tr>
             <tr>
-            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Save' name='Save' type='submit' value='Save' /> </td>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Delete' name='Delete' type='submit' value='Delete' /> </td>
             <td> " . $this->get_ingredients() . " </td>
             <td> " . $this->get_instructions() . "</td>
             </tr>
