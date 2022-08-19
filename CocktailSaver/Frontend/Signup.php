@@ -2,6 +2,10 @@
 include_once "MyHeader.php";
 include_once "../Backend/SessionHandler.php";
 
+?>
+
+<?php
+
 if (isset($_SESSION['UserName'])) {
     echo "Logged in as: " . $_SESSION["UserName"] . " Log out to create a new User.";
 } else {
@@ -17,7 +21,9 @@ if (isset($_SESSION['UserName'])) {
             echo "Failed to Login";
         }
     } else {
-        echo '<h1>Create Account</h1>
+        echo '<body class="masterBody">
+            <div class="mainContent">
+            <h1>Create Account</h1>
             <form action="Signup.php" method="post">
                 <label for="FUserName">New Username</label>
                 <input type="text" id="FUserName" name="FUserName" />
@@ -28,13 +34,17 @@ if (isset($_SESSION['UserName'])) {
                 <br />
                 <br />
                 <input type="submit" value="Create User" />
-            </form>';
+                <br />
+            </form>
+            </div>
+            </body>
+            ';
     }
 }
 
 
-
 ?>
+
 
 
 <?php
