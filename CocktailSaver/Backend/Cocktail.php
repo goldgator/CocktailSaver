@@ -62,7 +62,7 @@ class Cocktail
             <td> Instructions </td>
             </tr>
             <tr>
-            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Save' name='Save' type='submit' value='Save' /> </td>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Save' name='Save' type='submit' value='Save' class='pageButton' /> </td>
             <td> " . $this->get_ingredients() . " </td>
             <td> " . $this->get_instructions() . "</td>
             </tr>
@@ -86,7 +86,7 @@ class Cocktail
             <td> Instructions </td>
             </tr>
             <tr>
-            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Delete' name='Delete' type='submit' value='Delete' /> </td>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Delete' name='Delete' type='submit' value='Delete' class='pageButton' /> </td>
             <td> " . $this->get_ingredients() . " </td>
             <td> " . $this->get_instructions() . "</td>
             </tr>
