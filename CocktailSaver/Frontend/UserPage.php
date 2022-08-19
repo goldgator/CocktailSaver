@@ -8,6 +8,7 @@ include_once "MyHeader.php";
 include_once "../Backend/dbConnector.php";
 
 require "../Backend/SessionHandler.php";
+require "../Backend/Cocktail.php";
 
 //if(array_key_exists("ID", $_POST))
 //{
@@ -20,44 +21,20 @@ if (isset($_SESSION['UserID'])) {
 }
 
 $myDbConn = ConnGet();
-$dataSet = GetCocktailByUser($myDbConn, $ID);
-
-if ($dataSet){
-    $row = mysqli_fetch_array($dataSet);
-}
+$dataSet = GetCocktailsByUser($myDbConn, $ID);
 
 //$row['ID'], $row['GameName'], $row['ReleaseDate'], $row['GameRating'], $row['StockAmount'], $row['ImageLink'], $row['Summary']
 
 ?>
 
-<h1>Cocktail Name</h1>
-<?php echo $row['CocktailName']?>
-
-<br />
-<br />
-
-<img src="<?php echo $row['ImageLink'] ?>" />
-
-<br />
-<br />
-
-<h1>Ingredients</h1>
-<?php echo $row['Ingredients']?>
-
-<br />
-<br />
-
-<h1>Measures</h1>
-<?php echo $row['Measures']?>
-
-<br />
-<br />
-
-<h1>Instructions</h1>
-<?php echo $row['Instructions']?>
-
-<br />
-<br />
+<div class="entryList">
+    <?php
+    while ($row = mysqli_fetch_array($dataSet)) {
+        $newCocktail = new Cocktail($row["CocktailName"], $row["Ingredients"], $row["Measures"], $row["Instructions"], $row["ImageLink"]);
+        $newCocktail->create_list_entry();
+    }
+    ?>
+</div>
 
 <?php
 include_once "MyFooter.php"
