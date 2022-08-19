@@ -47,7 +47,7 @@ function GetCocktailsByIDJson($dbConn, $GID) {
 }
 
 // Return number of records changed
-function MyCocktailsUpdate($dbConn, $GId, $GName, $GRelease, $GRating, $GStock, $GImageLink, $GSummary) {
+function MyCocktailsUpdate($dbConn, $GId, $CUserID, $CCocktailName, $CIngredients, $CMeasures, $CInstructions, $CImageLink) {
 
     $query = "update Cocktails set GameName = '" . $GName . "', ReleaseDate = '" . $GRelease . "', GameRating = '" . $GRating . "', StockAmount = '" . $GStock . "', ImageLink = '" . $GImageLink . "', Summary = '" . $GSummary . "' where ID=" . $GId;
 
