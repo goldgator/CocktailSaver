@@ -30,8 +30,9 @@ $dataSet = GetCocktailsByUser($myDbConn, $ID);
 <div class="entryList">
     <?php
     while ($row = mysqli_fetch_array($dataSet)) {
-        $newCocktail = new Cocktail($row["CocktailName"], $row["Ingredients"], $row["Measures"], $row["Instructions"], $row["ImageLink"]);
-        $newCocktail->create_list_entry();
+        $newCocktail = new Cocktail($row["CocktailName"], $row["Ingredients"], $row["Instructions"], $row["ImageLink"], $ID);
+        $newCocktail->set_id($ID);
+        $newCocktail->create_delete_list_entry();
     }
     ?>
 </div>

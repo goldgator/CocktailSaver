@@ -4,6 +4,7 @@
 class Cocktail
 {
     //Fields
+    private $id;
     private $name;
     private $ingredients;
     private $instructions;
@@ -36,6 +37,8 @@ class Cocktail
             $jsonObj->strIngredient5 . " " . $jsonObj->strMeasure5;
     }
 
+    function get_id() { return $this->id; }
+    function set_id($newID) { $this->id = $newID; }
     function get_name() { return $this->name; }
     function get_ingredients() { return $this->ingredients; }
     function get_instructions() { return $this->instructions; }
@@ -60,6 +63,30 @@ class Cocktail
             </tr>
             <tr>
             <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Save' name='Save' type='submit' value='Save' /> </td>
+            <td> " . $this->get_ingredients() . " </td>
+            <td> " . $this->get_instructions() . "</td>
+            </tr>
+            </tbody>
+            </table>
+            </form>";
+
+        echo $form;
+
+    }
+
+    function create_delete_list_entry() {
+
+        $form = "<form method='post' action='DeleteCocktail.php'>" .
+            $this->create_hidden_input("CocktailID", "CocktailID", $this->get_id()) .
+            "<table class='cocktailEntryTable'>
+            <tbody>
+            <tr>
+            <td>" . $this->get_name() . "</td>
+            <td> Ingredients </td>
+            <td> Instructions </td>
+            </tr>
+            <tr>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Delete' name='Delete' type='submit' value='Delete' /> </td>
             <td> " . $this->get_ingredients() . " </td>
             <td> " . $this->get_instructions() . "</td>
             </tr>
