@@ -158,7 +158,7 @@ function GetUserByUsernamePassword($dbConn, $UUsername, $UPassword)
 
 #endregion
 
-function GetCocktailByUser($dbConn, $UID)
+function GetCocktailsByUser($dbConn, $UID)
 {
     $query = "SELECT * FROM Cocktails WHERE UserID = " . $UID;
 
