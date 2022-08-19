@@ -27,15 +27,22 @@ $dataSet = GetCocktailsByUser($myDbConn, $ID);
 
 ?>
 
-<div class="entryList">
-    <?php
+<body class="masterBody">
+
+    <div class="mainContent">
+
+        <div class="entryList">
+            <?php
     while ($row = mysqli_fetch_array($dataSet)) {
         $newCocktail = new Cocktail($row["CocktailName"], $row["Ingredients"], $row["Instructions"], $row["ImageLink"], $ID);
         $newCocktail->set_id($row["ID"]);
         $newCocktail->create_delete_list_entry();
     }
-    ?>
-</div>
+            ?>
+        </div>
+    </div>
+
+</body>
 
 <?php
 include_once "MyFooter.php"
