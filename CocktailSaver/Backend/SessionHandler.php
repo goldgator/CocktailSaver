@@ -4,14 +4,14 @@ include_once "dbConnector.php";
 
 //Session keys
     //UserName -> User name of the user
-    //ID -> ID of the user
+    //UserID -> ID of the user
 
 function GetUserName() {
     return $_SESSION["UserName"];
 }
 
 function GetUserID() {
-    return $_SESSION["ID"];
+    return $_SESSION["UserID"];
 }
 
 function TryLogin($UserName, $UserPassword) {
@@ -41,14 +41,21 @@ function CreateAndLogin($UserName, $UserPassword) {
     return TryLoginAlt($dbConn, $UserName, $UserPassword);
 }
 
+
 function CreateUserSession($UserName, $UserID) {
     $_SESSION["UserName"] = $UserName;
     $_SESSION["UserID"] = $UserID;
 }
 
+function CreateAdminSession($UserName) {
+    $_SESSION["UserName"] = $UserName;
+    $_SESSION["IsAdmin"] = true;
+}
+
 function Logout() {
     unset($_SESSION["UserName"]);
-    unset($_SESSION["UserID"]);
+    unset($_SESSION["IsAdmin"]);
+    unset($_SESSION["StyleType"]);
 }
 
 ?>
