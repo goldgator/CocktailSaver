@@ -53,7 +53,35 @@ class Cocktail
     function set_userKey($newKey) { $this->userKey = $newKey; }
 
     function create_list_entry() {
-        
+        $form = "<form method='post' action='../Backend/SessionHandler.php'>
+            <table class='cocktailEntryTable'>
+            <tbody>
+            <tr>
+            <td>" . $this->get_name() . "</td>
+            <td> Ingredients </td>
+            <td> Instructions </td>
+            </tr>
+            <tr>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input name='Save' type='submit' value='Save' /> </td>
+            <td> " . $this->make_ingredient_list() . " </td>
+            <td> " . $this->get_instructions() . "</td>
+            </tr>
+            </tbody>
+            </table>
+            </form>";
+
+        echo $form;
+
+    }
+
+    private function make_ingredient_list() {
+        $list = "";
+
+        for ($x = 0; $x < 5; $x++) {
+            $list .= $this->ingredients[$x] . " " . $this->measures[$x] . " <br />";
+        }
+
+        return $list;
     }
 
 }
