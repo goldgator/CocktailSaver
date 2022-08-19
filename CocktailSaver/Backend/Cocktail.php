@@ -1,13 +1,6 @@
 <?php
 
-/**
- * Cocktail short summary.
- *
- * Cocktail description.
- *
- * @version 1.0
- * @author littl
- */
+
 class Cocktail
 {
     //Fields
@@ -53,7 +46,46 @@ class Cocktail
     function set_userKey($newKey) { $this->userKey = $newKey; }
 
     function create_list_entry() {
-        
+        $ingredientStr = $this->make_ingredient_list();
+
+        $form = "<form method='post' action='../Backend/SaveCocktail.php'>" . 
+            $this->create_hidden_input("UserID", "UserID", $this->get_userKey()) . 
+            $this->create_hidden_input("Name", "Name", $this->get_name()) . 
+            $this->create_hidden_input("Ingredients", "Ingredients", $ingredientStr) . 
+            $this->create_hidden_input("Instructions", "Instructions", $this->get_instructions()) . 
+            $this->create_hidden_input("ImageLink", "ImageLink", $this->get_imgLink()) . 
+            "<table class='cocktailEntryTable'>
+            <tbody>
+            <tr>
+            <td>" . $this->get_name() . "</td>
+            <td> Ingredients </td>
+            <td> Instructions </td>
+            </tr>
+            <tr>
+            <td> <img src='" . $this->get_imgLink() . "' class='imgThumbnail' /> <input id='Save' name='Save' type='submit' value='Save' /> </td>
+            <td> " . $ingredientStr . " </td>
+            <td> " . $this->get_instructions() . "</td>
+            </tr>
+            </tbody>
+            </table>
+            </form>";
+
+        echo $form;
+
+    }
+
+    private function make_ingredient_list() {
+        $list = "";
+
+        for ($x = 0; $x < 5; $x++) {
+            $list .= $this->ingredients[$x] . " " . $this->measures[$x] . " <br />";
+        }
+
+        return $list;
+    }
+
+    private function create_hidden_input($Id, $Name, $Value) {
+        return '<input type="hidden" id="' . $Id .'" name="' . $Name . '" value="' . $Value . '">';
     }
 
 }
