@@ -106,7 +106,7 @@ function GetUsersJson($dbConn) {
 // Return number of records changed
 function MyUserUpdate($dbConn, $UId, $UUserName, $UPassword) {
 
-    $query = "update VideoGame set Username = '" . $UUserName . "', Password = '" . $UPassword . "' where ID=" . $UId;
+    $query = "update Users set Username = '" . $UUserName . "', Password = '" . $UPassword . "' where ID=" . $UId;
 
     $result = mysqli_query($dbConn, $query);
     $rows = $dbConn->affected_rows;
@@ -130,8 +130,8 @@ function MyDeleteUser($dbConn, $UId) {
     return $result;
 }
 
-function MyAddUser($dbConn,  $UUsername, $UPassword, $UIsAdmin) {
-    $query = "INSERT INTO Users (Username, Password, IsAdmin) VALUES(?, ?, ?)";
+function MyAddUser($dbConn,  $UUsername, $UPassword) {
+    $query = "INSERT INTO Users (Username, Password) VALUES(?, ?)";
     $prep = mysqli_prepare($dbConn, $query);
 
     // Data format
@@ -139,7 +139,7 @@ function MyAddUser($dbConn,  $UUsername, $UPassword, $UIsAdmin) {
     //    d Doubles
     //    b Blobs
     //    s Everything Else
-    mysqli_stmt_bind_param($prep, "ssi", $UUsername, $UPassword, $UIsAdmin);
+    mysqli_stmt_bind_param($prep, "ss", $UUsername, $UPassword);
 
     mysqli_stmt_execute($prep);
 

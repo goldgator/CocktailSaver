@@ -11,7 +11,7 @@ function GetUserName() {
 }
 
 function GetUserID() {
-    return $_SESSION["ID"];
+    return $_SESSION["UserID"];
 }
 
 function TryLogin($UserName, $UserPassword) {
