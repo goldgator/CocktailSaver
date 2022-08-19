@@ -13,7 +13,7 @@ require "../Backend/Cocktail.php";
         <div>
             <form method="post" action="CocktailSearch.php">
                 <input type="text" class="searchTxt" id="SearchText" name="SearchText" />
-                <input type="submit" value="Search" id="Search" name="Search" />
+                <input class="pageButton" type="submit" value="Search" id="Search" name="Search" />
             </form>
         </div>
 

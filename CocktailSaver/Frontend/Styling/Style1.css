@@ -13,6 +13,12 @@ body {
     align-content: center;
 }
 
+.minion {
+    color: white;
+    text-decoration: none;
+    align-content: center;
+}
+
 .pageButton2 {
     background-color: black;
     color: white;
@@ -139,3 +145,16 @@ font {
     height: 100px;
     float: left;
 }
+
+.imgThumbnail {
+    width: 200px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+table.cocktailEntryTable td 
+{
+    border: solid rgb(52, 152, 219) 2px;
+
+}
+

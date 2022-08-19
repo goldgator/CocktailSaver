@@ -20,7 +20,7 @@ include_once "Frontend/MyHeader.php";
             <input type="text" id="lname" name="lname" />
             <br />
             <br />
-            <input type="submit" value="Submit" />
+            <input class="pageButton" type="submit" value="Submit" />
         </form>
     </div>
 </body>

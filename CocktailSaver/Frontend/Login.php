@@ -29,7 +29,7 @@ if (isset($_SESSION['IsAdmin'])) {
                 <input type="text" id="FPassword" name="FPassword" />
                 <br />
                 <br />
-                <input type="submit" value="Login" />
+                <input class="pageButton" type="submit" value="Login" />
                 <br />
             </form>
             </div>

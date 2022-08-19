@@ -33,7 +33,7 @@ if (isset($_SESSION['UserName'])) {
                 <input type="text" id="FPassword" name="FPassword" />
                 <br />
                 <br />
-                <input type="submit" value="Create User" />
+                <input class="pageButton" type="submit" value="Create User" />
                 <br />
             </form>
             </div>

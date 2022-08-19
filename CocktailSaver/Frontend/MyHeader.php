@@ -13,7 +13,7 @@ session_start();
 <div class="bodyHeader">
     <br />
 
-<h1><img class="headerImage" src="https://i.pinimg.com/originals/69/a1/61/69a161d0228db00c9a2560a46bf942eb.png" /></img> Bacon Bois Cocktail Bar </h1>
+<h1><img class="headerImage" src="https://i.pinimg.com/originals/69/a1/61/69a161d0228db00c9a2560a46bf942eb.png" /> <a class="minion"  href="../Frontend/Images/CryingMinion.jpg">Bacon Bois Cocktail Bar</a></h1>
     <br />
  </div>
 
