@@ -4,22 +4,21 @@
 DEFINE ('DB_USER', 'CChildress');
 DEFINE ('DB_PSWD', 'CSChildress');
 DEFINE ('DB_SERVER', '192.168.50.211');
-DEFINE ('DB_NAME', 'VideoGameStore');
+DEFINE ('DB_NAME', 'CocktailDB');
 
-//Table Users / VideoGame
+//Table Users / Cocktails
     //ID
     //Username
     //Password
-    //IsAdmin
 
-//VideoGame
+//Cocktails
     //ID
-    //GameName
-    //ReleaseDate
-    //GameRating
-    //StockAmount
+    //UserID
+    //CocktailName
+    //Ingredients
+    //Measures
+    //Instructions
     //ImageLink
-    //Summary
 
 function ConnGet() {
     // $dbConn will contain a resource link to the database
@@ -30,27 +29,27 @@ function ConnGet() {
     return $dbConn;
 }
 
-#region Games
-function GetGamesJson($dbConn) {
+#region Cocktails
+function GetCocktailsJson($dbConn) {
 
     $query = "SELECT *
-   FROM VideoGame";
+   FROM Cocktails";
 
     return @mysqli_query($dbConn, $query);
 }
 
-function GetGamesByIDJson($dbConn, $GID) {
+function GetCocktailsByIDJson($dbConn, $GID) {
 
     $query = "SELECT *
-   FROM VideoGame WHERE ID = " . $GID;
+   FROM Cocktails WHERE ID = " . $GID;
 
     return @mysqli_query($dbConn, $query);
 }
 
 // Return number of records changed
-function MyGameUpdate($dbConn, $GId, $GName, $GRelease, $GRating, $GStock, $GImageLink, $GSummary) {
+function MyCocktailsUpdate($dbConn, $GId, $GName, $GRelease, $GRating, $GStock, $GImageLink, $GSummary) {
 
-    $query = "update VideoGame set GameName = '" . $GName . "', ReleaseDate = '" . $GRelease . "', GameRating = '" . $GRating . "', StockAmount = '" . $GStock . "', ImageLink = '" . $GImageLink . "', Summary = '" . $GSummary . "' where ID=" . $GId;
+    $query = "update Cocktails set GameName = '" . $GName . "', ReleaseDate = '" . $GRelease . "', GameRating = '" . $GRating . "', StockAmount = '" . $GStock . "', ImageLink = '" . $GImageLink . "', Summary = '" . $GSummary . "' where ID=" . $GId;
 
     $result = mysqli_query($dbConn, $query);
     $rows = $dbConn->affected_rows;
@@ -66,16 +65,16 @@ function MyGameUpdate($dbConn, $GId, $GName, $GRelease, $GRating, $GStock, $GIma
 
 }
 
-function MyDeleteGame($dbConn, $GId) {
-    $query = "delete from VideoGame where ID = " . $GId;
+function MyDeleteCocktail($dbConn, $GId) {
+    $query = "delete from Cocktails where ID = " . $GId;
 
     $result = mysqli_query($dbConn, $query);
 
     return $result;
 }
 
-function MyAddGame($dbConn,  $GName, $GRelease, $GRating, $GStock, $GImageLink, $GSummary) {
-    $query = "INSERT INTO VideoGame (GameName, ReleaseDate, GameRating, StockAmount, ImageLink, Summary) VALUES(?, ?, ?, ?, ?, ?)";
+function MyAddCocktails($dbConn,  $CUserID, $CCocktailName, $CIngredients, $CMeasures, $CInstructions, $CImageLink) {
+    $query = "INSERT INTO Cocktails (UserID, CocktailName, Ingredients, Measures, Instructions, ImageLink) VALUES(?, ?, ?, ?, ?, ?)";
     $prep = mysqli_prepare($dbConn, $query);
 
     // Data format
@@ -83,7 +82,7 @@ function MyAddGame($dbConn,  $GName, $GRelease, $GRating, $GStock, $GImageLink, 
     //    d Doubles
     //    b Blobs
     //    s Everything Else
-    mysqli_stmt_bind_param($prep, "ssdiss", $GName, $GRelease, $GRating, $GStock, $GImageLink, $GSummary);
+    mysqli_stmt_bind_param($prep, "isssss", $CUserID, $CCocktailName, $CIngredients, $CMeasures, $CInstructions, $CImageLink);
 
     mysqli_stmt_execute($prep);
 
