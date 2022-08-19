@@ -17,7 +17,9 @@ if (isset($_SESSION['IsAdmin'])) {
             echo  "<p class='logText'> Failed to Login </p>";
         }
     } else {
-        echo '<h1>Login</h1>
+        echo '<body class="masterBody">
+            <div class="mainContent">
+            <h1>Login</h1>
             <form action="Login.php" method="post">
                 <label for="FUserName">Username</label>
                 <input type="text" id="FUserName" name="FUserName" />
@@ -28,7 +30,11 @@ if (isset($_SESSION['IsAdmin'])) {
                 <br />
                 <br />
                 <input type="submit" value="Login" />
-            </form>';
+                <br />
+            </form>
+            </div>
+            </body>
+            ';
     }
 }
 
