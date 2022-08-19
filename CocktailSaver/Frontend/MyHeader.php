@@ -24,6 +24,7 @@ session_start();
     <a class="pageButton"  href="../index.php">Home</a>
     <a class="pageButton" href="/Frontend/CocktailSearch.php">Search</a>
     <a class="pageButton"  href="/Frontend/Contact.php">Contact</a>
+    <a class="pageButton"  href="/Frontend/UserPage.php">User Page</a>
 </div>
         <?php
         if (isset($_SESSION["UserName"])) {

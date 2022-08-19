@@ -13,7 +13,7 @@ if(array_key_exists("ID", $_POST))
 }
 
 $myDbConn = ConnGet();
-$dataSet = GetGamesByIDJson($myDbConn, $ID);
+$dataSet = GetCocktailByUser($myDbConn, $ID);
 
 if ($dataSet){
     $row = mysqli_fetch_array($dataSet);
@@ -23,8 +23,8 @@ if ($dataSet){
 
 ?>
 
-<h1>Game Name</h1>
-<?php echo $row['GameName']?>
+<h1>Cocktail Name</h1>
+<?php echo $row['CocktailName']?>
 
 <br />
 <br />
@@ -34,27 +34,23 @@ if ($dataSet){
 <br />
 <br />
 
-<h1>Release Date</h1>
-<?php echo $row['ReleaseDate']?>
+<h1>Ingredients</h1>
+<?php echo $row['Ingredients']?>
 
 <br />
 <br />
 
-<h1>Game Rating</h1>
-<?php echo $row['GameRating']?>
+<h1>Measures</h1>
+<?php echo $row['Measures']?>
 
 <br />
 <br />
 
-<h1>Stock Amount</h1>
-<?php echo $row['StockAmount']?>
+<h1>Instructions</h1>
+<?php echo $row['Instructions']?>
 
 <br />
 <br />
-
-<h1>Summary</h1>
-<?php echo $row['Summary']?>
-
 
 <?php
 include_once "MyFooter.php"

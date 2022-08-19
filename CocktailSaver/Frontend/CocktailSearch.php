@@ -19,7 +19,7 @@ require "../Backend/Utilities.php";
 
     // Get the db connection
     $myDbConn = ConnGet();
-    $dataSet = GetGamesJson($myDbConn);
+    $dataSet = GetCocktailsJson($myDbConn);
 
 
 
