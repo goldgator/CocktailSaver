@@ -47,11 +47,6 @@ function CreateUserSession($UserName, $UserID) {
     $_SESSION["UserID"] = $UserID;
 }
 
-function CreateAdminSession($UserName) {
-    $_SESSION["UserName"] = $UserName;
-    $_SESSION["IsAdmin"] = true;
-}
-
 function Logout() {
     unset($_SESSION["UserName"]);
     unset($_SESSION["UserID"]);
