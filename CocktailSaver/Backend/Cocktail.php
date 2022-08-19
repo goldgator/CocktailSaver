@@ -38,6 +38,7 @@ class Cocktail
     }
 
     function get_id() { return $this->id; }
+    function set_id($newID) { $this->id = $newID; }
     function get_name() { return $this->name; }
     function get_ingredients() { return $this->ingredients; }
     function get_instructions() { return $this->instructions; }
