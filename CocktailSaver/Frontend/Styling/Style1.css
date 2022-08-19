@@ -4,14 +4,13 @@ body {
 }
 
 .pageButton {
-    background-color: black;
+    background-color: rgb(0, 86, 166 );
     color: white;
     padding: 15px 25px;
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;
     align-content: center;
-
 }
 
 .pageButton2 {
@@ -38,12 +37,12 @@ h1 {
 }
 
 .bodyHeader {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgb(0, 0, 0, 0.6);
     color: white;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px 140px 30px 140px;
-    border: solid white 2px;
+    border: solid rgb(52, 152, 219) 2px;
 }
 
 .pageContent {
@@ -101,9 +100,9 @@ td {
 }
 
 .mainContent {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,0,0, 0.6);
     border-radius: 1px;
-    border: solid white 2px;
+    border: solid rgb(52, 152, 219) 2px;
     padding: 25px;
     width: 65px;
     margin: auto;
@@ -112,7 +111,7 @@ td {
 }
 
 .masterBody {
-    background-image: url(https://images.immediate.co.uk/production/volatile/sites/2/2021/04/Zombie-bbcc653.jpg?quality=90&webp=true&resize=975,649);
+    background-image: url(https://newevolutiondesigns.com/images/freebies/blue-wallpaper-22.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: fit;
