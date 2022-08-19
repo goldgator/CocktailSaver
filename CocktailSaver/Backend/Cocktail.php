@@ -13,7 +13,16 @@ class Cocktail
 
     //Methods
     //Constructor does not set userkey, must be obtained and set after
-    function __construct($jsonString) {
+    function __construct($newName, $newIngredients, $newMeasures, $newInstructions, $newImgLink, $newUserKey) {
+        $this->name = $newName;
+        $this->ingredients = $newIngredients;
+        $this->measures = $newMeasures;
+        $this->instructions = $newInstructions;
+        $this->imgLink = $newImgLink;
+        $this->userKey = $newUserKey;
+    }
+
+    function scrape_json($jsonString) {
         //decode json
         $jsonObj = json_decode($jsonString);
 
@@ -48,12 +57,12 @@ class Cocktail
     function create_list_entry() {
         $ingredientStr = $this->make_ingredient_list();
 
-        $form = "<form method='post' action='../Backend/SaveCocktail.php'>" . 
-            $this->create_hidden_input("UserID", "UserID", $this->get_userKey()) . 
-            $this->create_hidden_input("Name", "Name", $this->get_name()) . 
-            $this->create_hidden_input("Ingredients", "Ingredients", $ingredientStr) . 
-            $this->create_hidden_input("Instructions", "Instructions", $this->get_instructions()) . 
-            $this->create_hidden_input("ImageLink", "ImageLink", $this->get_imgLink()) . 
+        $form = "<form method='post' action='../Backend/SaveCocktail.php'>" .
+            $this->create_hidden_input("UserID", "UserID", $this->get_userKey()) .
+            $this->create_hidden_input("Name", "Name", $this->get_name()) .
+            $this->create_hidden_input("Ingredients", "Ingredients", $ingredientStr) .
+            $this->create_hidden_input("Instructions", "Instructions", $this->get_instructions()) .
+            $this->create_hidden_input("ImageLink", "ImageLink", $this->get_imgLink()) .
             "<table class='cocktailEntryTable'>
             <tbody>
             <tr>

@@ -15,9 +15,7 @@ require "../Backend/Utilities.php";
             <?php
     include_once "../Backend/dbConnector.php";
 
-    if (isset($_SESSION["IsAdmin"])) {
-        echo '<div class="gameCenter"><a class="pageButton"  href="AddGame.php">Add Game(Admin)</a></div>';
-    }
+
 
     // Get the db connection
     $myDbConn = ConnGet();
