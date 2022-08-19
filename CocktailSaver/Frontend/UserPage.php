@@ -7,9 +7,16 @@ include_once "MyHeader.php";
 <?php
 include_once "../Backend/dbConnector.php";
 
-if(array_key_exists("ID", $_POST))
-{
-    $ID = $_POST["ID"];
+require "../Backend/SessionHandler.php";
+
+//if(array_key_exists("ID", $_POST))
+//{
+//    $ID = $_POST["ID"];
+//}
+
+if (isset($_SESSION['UserID'])) {
+    //echo "Logged in as: " . $_SESSION["UserName"];
+    $ID = $_SESSION["UserID"];
 }
 
 $myDbConn = ConnGet();
